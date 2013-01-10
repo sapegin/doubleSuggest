@@ -50,8 +50,13 @@
 				// Handle input field events.
 				$input.on({
 					"focus.doubleSuggest": function(e) {
+						var val = $input.val();
+						typedText = val;
 						// Show the results list if there is a value in the input.
-						if ($.trim($input.val()) !== '') { $resultsHolder.show(); }	
+						if ($.trim(val) !== '') { $resultsHolder.show(); }
+					},
+					"input.doubleSuggest": function(e) {
+						typedText = $input.val();
 					},
 					"keydown.doubleSuggest": function(e) {
 
